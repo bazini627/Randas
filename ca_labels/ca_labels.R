@@ -39,6 +39,6 @@ ca_map <- tm_shape(ca) +
   tm_layout(frame = FALSE, bg.color = '#f3ebe1')
 
 # Save map to file and specify the size be 8.5x11"
-tmap_save(ca_map, "r_ca_labels_color_polys.png", 8.5,11)
+tmap_save(ca_map, "../data/output/r_ca_labels_color_polys.png", 8.5,11)
 # Save to SVG so we can then adjust labels in somehething like InkScape
-tmap_save(ca_map, "r_ca_labels_color_poly.svg", 8.5,11)
+tmap_save(ca_map, "../data/output/r_ca_labels_color_polys.svg", 8.5,11)

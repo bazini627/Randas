@@ -48,11 +48,11 @@ wnv[2:5] <-
     as.numeric(gsub("-", 0, col)))
 
 # Output data frame to csv
-write.csv(sle, "data/output/sleData2019.csv", row.names = FALSE)
-write.csv(wnv, "data/output/wnvData2019.csv", row.names = FALSE)
+write.csv(sle, "../data/output/sleData2019.csv", row.names = FALSE)
+write.csv(wnv, "../data/output/wnvData2019.csv", row.names = FALSE)
 
 # Read in CA county geojson
-ca <- st_read("data/caCountiesNoChannelIslands.geojson")
+ca <- st_read("../data/caCountiesNoChannelIslands.geojson")
 
 # Drop some columns in ca dataframe and pipe to rename the NAME column to County to join to sle/wnv data frames
 ca <- select (ca, -c(COUNTYNS, ALAND, AWATER)) %>%
@@ -107,5 +107,5 @@ wnv_human_bubble <- tm_shape(wnv_ca_joined) +
   )
 
 # Save to png
-tmap_save(wnv_human_bubble, "data/output/wnvHumanBubble2019.png")
+tmap_save(wnv_human_bubble, "../data/output/r_wnvHumanBubble2019.png")
 
